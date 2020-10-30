@@ -20,6 +20,12 @@ docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
 ```
 Make sure to change `vpn.example.com` to either a domain name or IP which resolves to your server. Make sure to remember the password you used to create the Certificate Authority, as you will need to set it in `hackbox_server`'s `.env` file. You can also change `OVPN_DATA`, but make sure you change it as well. 
 
+Then, pull the necessary Docker images:
+```bash
+docker pull strellic/openvpn-client
+docker pull strellic/hackbox_example_room # not required if you remove the default room
+```
+
 From there, follow the setup instructions in each of the folders.
 
 ## Contributing

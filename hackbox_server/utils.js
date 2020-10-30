@@ -47,7 +47,10 @@ let startContainer = (options, reset = false) => {
 				}
 			}
 			else if (err.json.message && err.json.message.includes("No such image")) {
+				console.log(`[VPN] Warning! Tried to start an image (${options.Image}) that does not exist. Attempting to pull...`);
+
 				pullImage(options.Image).then(() => {
+					console.log(`[VPN] Successfully pulled ${options.Image}.`);
 					startContainer(options).then(resolve).catch(reject);
 				})
 				.catch(() => {
