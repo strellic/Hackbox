@@ -18,7 +18,7 @@ docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u u
 docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn touch /etc/openvpn/vars
 docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
 ```
-Make sure to change `vpn.example.com` to a domain name which resolves to your server. Make sure to remember the password you used to create the Certificate Authority, as you will need to set it in `hackbox_server`'s `.env` file. You can also change `OVPN_DATA`, but make sure you change it as well. 
+Make sure to change `vpn.example.com` to either a domain name or IP which resolves to your server. Make sure to remember the password you used to create the Certificate Authority, as you will need to set it in `hackbox_server`'s `.env` file. You can also change `OVPN_DATA`, but make sure you change it as well. 
 
 From there, follow the setup instructions in each of the folders.
 

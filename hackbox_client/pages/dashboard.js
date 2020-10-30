@@ -36,7 +36,8 @@ class Dashboard extends React.Component {
     this.state = {
       disabled: false,
       error: null,
-      isLoading: true
+      isLoading: true,
+      rooms: []
     }
 
     fetch(process.env.API_URL + "/api/room/list", {
@@ -44,7 +45,8 @@ class Dashboard extends React.Component {
     })
     .then(resp => resp.json())
     .then(resp => {
-      this.setState({["rooms"]: resp.response, ["isLoading"]: false});
+      let rooms = resp.response.filter(r => r.completed).sort(() => 0.5 - Math.random()).slice(0, 3);
+      this.setState({["rooms"]: rooms, ["isLoading"]: false});
     });
   }
 
@@ -99,7 +101,7 @@ class Dashboard extends React.Component {
                     </tr>
                   </thead>
                   <tbody>
-                    { this.state.isLoading ? <></> : this.state.rooms.filter(r => r.completed).map((room, i) => (<RoomRow showDesc={false} key={i} room={room}></RoomRow>))}
+                    { this.state.isLoading ? <></> : this.state.rooms.map((room, i) => (<RoomRow showDesc={false} key={i} room={room}></RoomRow>))}
                   </tbody>
                 </Table>
               </Card>

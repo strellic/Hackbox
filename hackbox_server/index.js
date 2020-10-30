@@ -9,6 +9,7 @@ import passport from "passport";
 dotenv.config();
 
 import "./authenticate.js";
+import dbSetup from "./db_setup.js";
 import utils from "./utils.js";
 import { initVPN } from "./vpn_setup.js";
 
@@ -60,6 +61,8 @@ initVPN().then(() => {
 	app.listen(process.env.PORT, () => {
 		console.log(`[API] Hackbox server listening at http://localhost:${process.env.PORT}`)
 	});
+
+	dbSetup();
 
 	setInterval(utils.cleanup, 60 * 1000);
 	utils.cleanup();

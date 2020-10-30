@@ -16,7 +16,7 @@ JWT_SECRET=jwt_secret
 BOX_DURATION=60
 ORIGIN=https://hackbox.example.com
 OPENVPN_CA_PASS=ca_pass
-OPENVPN_VOLUME=docker_volume
+OPENVPN_VOLUME=ovpn-data-hackbox
 OPENVPN_SERVER=vpn.example.com
 ```
 3. Run `npm start` to start the API server.
