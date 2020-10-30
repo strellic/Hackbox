@@ -229,7 +229,7 @@ class Room extends React.Component {
 
                     {this.state.finished && (
                       <Alert ref={this.successRef} color="success" className="mt-4">
-                        You completed the room!
+                        {this.state.finished}
                       </Alert>
                     )}
 

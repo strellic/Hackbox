@@ -195,7 +195,8 @@ router.post("/check", requiresLogin, async (req, res) => {
 		success: true,
 		response: {
 			flags: flags,
-			failed: failed
+			failed: failed,
+			msg: room.successMsg
 		}
 	});
 });

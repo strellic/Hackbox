@@ -15,7 +15,8 @@ export default async function() {
 			flags: [
 				{name: "Website Flag", flag: "hackbox{welcome_to_hackbox!!!}"}
 			],
-			markdown: "This room is an example room to show you how to use Hackbox. Launch a room and get the flag!"
+			markdown: "This room is an example room to show you how to use Hackbox. Launch a room and get the flag!",
+			successMsg: "You completed the example room! Now, explore the other rooms and have fun!" // optional message
 		});
 		room.save();
 	}

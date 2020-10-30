@@ -33,6 +33,9 @@ const roomSchema = Schema({
 	}],
 	markdown: {
 		type: String
+	},
+	successMsg: {
+		type: String
 	}
 });
 
