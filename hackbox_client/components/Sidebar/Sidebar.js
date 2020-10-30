@@ -121,28 +121,10 @@ function Sidebar(props) {
               <DropdownItem className="noti-title" header tag="div">
                 <h6 className="text-overflow m-0">Welcome!</h6>
               </DropdownItem>
-              <Link href="/admin/profile">
+              <Link href="/profile">
                 <DropdownItem>
                   <i className="ni ni-single-02" />
                   <span>My profile</span>
-                </DropdownItem>
-              </Link>
-              <Link href="/admin/profile">
-                <DropdownItem>
-                  <i className="ni ni-settings-gear-65" />
-                  <span>Settings</span>
-                </DropdownItem>
-              </Link>
-              <Link href="/admin/profile">
-                <DropdownItem>
-                  <i className="ni ni-calendar-grid-58" />
-                  <span>Activity</span>
-                </DropdownItem>
-              </Link>
-              <Link href="/admin/profile">
-                <DropdownItem>
-                  <i className="ni ni-support-16" />
-                  <span>Support</span>
                 </DropdownItem>
               </Link>
               <DropdownItem divider />
