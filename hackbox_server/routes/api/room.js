@@ -249,7 +249,7 @@ router.post("/launch", requiresLogin, async (req, res) => {
 
 	let vpn_create = {
 		Image: 'strellic/openvpn-client',
-		name: `hackbox_vpn_${username}`,
+		name: `hackbox_vpn_${username}_${name}`,
 		Tty: true,
 		AttachStdout: true,
 		HostConfig: {
@@ -269,7 +269,7 @@ router.post("/launch", requiresLogin, async (req, res) => {
 
 	let containers = [];
 
-	await utils.killUserContainer(user, `hackbox_vpn_${username}`);
+	await utils.killUserContainer(user, `hackbox_vpn_${username}_${name}`);
 
 	let clientVPN;
 	try {
@@ -305,7 +305,7 @@ router.post("/launch", requiresLogin, async (req, res) => {
 			name: `hackbox_room_${username}_${name}_${i}`,
 			Tty: false,
 			HostConfig: {
-				NetworkMode: `container:hackbox_vpn_${username}`,
+				NetworkMode: `container:hackbox_vpn_${username}_${name}`,
 				Memory: 512000000,
 				CpuPeriod: 100000,
 				CpuQuota: 100000
