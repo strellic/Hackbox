@@ -283,52 +283,53 @@ class Room extends React.Component {
 					              </Button>
 					          )}
 				          </Col>
-
 			              <hr />
-
 			              <ReactMarkdown>{this.state.room.markdown}</ReactMarkdown>
+                    {this.state.room.flags.length > 0 && (
+                      <>
+                        <hr />
 
-			              <hr />
-
-			              <Form role="form" onSubmit={this.checkFlags}>
-					        <h3 className="mb-4">Submit Flags:</h3>
-					        {this.state.submitError &&
-				                (<Alert color="danger">
-				                  {this.state.submitError}
-				                </Alert>)
-				              }
-					        {this.state.room.flags.map((flag) => (
-					          <Row key={flag}>
-					            <Col lg="12">
-					              <FormGroup>
-					                <label className="form-control-label" htmlFor={flag}>
-					                  {flag}
-					                </label>
-					                <Input
-					                  className="form-control-alternative"
-					                  placeholder="hackbox{......}"
-					                  name={flag}
-					                  defaultValue={this.state.flags[flag]}
-					                  style={{border: this.state.flagColors[flag] || "3px solid white"}}
-					                  onChange={this.onChange}
-					                  type="text"
-					                />
-					              </FormGroup>
-					            </Col>
-					          </Row>
-					        ))}
-					        <Button
-			                    color="primary"
-			                    type="submit"
-			                    size="sm"
-			                    className="float-right"
-			                    disabled={this.state.submitDisabled}
-			                >
-			                	Submit Flags 
-			                </Button>
-					      </Form>
+                        <Form role="form" onSubmit={this.checkFlags}>
+                          <h3 className="mb-4">Submit Flags:</h3>
+                          {this.state.submitError &&
+                                (<Alert color="danger">
+                                  {this.state.submitError}
+                                </Alert>)
+                              }
+                          {this.state.room.flags.map((flag) => (
+                            <Row key={flag}>
+                              <Col lg="12">
+                                <FormGroup>
+                                  <label className="form-control-label" htmlFor={flag}>
+                                    {flag}
+                                  </label>
+                                  <Input
+                                    className="form-control-alternative"
+                                    placeholder="hackbox{......}"
+                                    name={flag}
+                                    defaultValue={this.state.flags[flag]}
+                                    style={{border: this.state.flagColors[flag] || "3px solid white"}}
+                                    onChange={this.onChange}
+                                    type="text"
+                                  />
+                                </FormGroup>
+                              </Col>
+                            </Row>
+                          ))}
+                          <Button
+                            color="primary"
+                            type="submit"
+                            size="sm"
+                            className="float-right"
+                            disabled={this.state.submitDisabled}
+                          >
+                            Submit Flags 
+                          </Button>
+                        </Form>
+                      </>
+                    )}
 			            </CardBody>
-			        </>
+			         </>
 	           	)}
               </Card>
             </div>

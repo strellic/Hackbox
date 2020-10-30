@@ -29,7 +29,8 @@ Make sure to change `vpn.example.com` to either a domain name or IP which resolv
 Then, pull the necessary Docker images:
 ```bash
 docker pull strellic/openvpn-client
-docker pull strellic/hackbox_example_room # not required if you remove the default room
+docker pull strellic/hackbox_example_room # not required if you remove example room
+docker pull strellic/hackbox_kali # not required if you remove kali room
 ```
 
 From there, follow the setup instructions in each of the folders.

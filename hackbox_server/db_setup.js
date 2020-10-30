@@ -19,5 +19,18 @@ export default async function() {
 			successMsg: "You completed the example room! Now, explore the other rooms and have fun!" // optional message
 		});
 		room.save();
+
+		let room2 = new Room({
+		    images: [
+		        "strellic/hackbox_kali"
+		    ],
+		    name: "hackbox_kali",
+		    displayName: "Kali Hackbox",
+		    difficulty: 0,
+		    shortDescription: "A room to give you a Kali Hackbox.",
+		    flags: [],
+		    markdown: "This room has a box which will give you your own Kali test room that is already connected to our internal network!\n\nThe box has tools like `gobuster`, `sqlmap`, and `netcat`, as well as many wordlists in `/usr/share/wordlists`. If you want something like `metasploit`, you should learn how to use Kali with a VM or dual boot!\n\nLaunch the box, and run the following command: `ssh -o UserKnownHostsFile=/dev/null user@[IP]`. The password for `user` is `h4ckb0x`.",
+		});
+		room2.save();
 	}
 }
