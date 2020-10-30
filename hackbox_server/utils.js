@@ -47,8 +47,12 @@ let startContainer = (options, reset = false) => {
 				}
 			}
 			else if (err.json.message && err.json.message.includes("No such image")) {
-				await pullImage(options.Image);
-				startContainer(options).then(resolve).catch(reject);
+				pullImage(options.Image).then(() => {
+					startContainer(options).then(resolve).catch(reject);
+				})
+				.catch(() => {
+					reject(err);
+				})
 			}
 			else {
 				reject(err);
