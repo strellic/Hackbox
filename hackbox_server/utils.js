@@ -46,12 +46,29 @@ let startContainer = (options, reset = false) => {
 					container.restart((err, data) => finish(err, container));
 				}
 			}
+			else if (err.json.message && err.json.message.includes("No such image")) {
+				await pullImage(options.Image);
+				startContainer(options).then(resolve).catch(reject);
+			}
 			else {
 				reject(err);
 			}
 		});
 	});
 };
+
+let pullImage = (image) => {
+	return new Promise((resolve, reject) => {
+		docker.pull(image, (err, stream) => {
+			if(err) {
+				reject(err);
+			}
+			else {
+				resolve(stream);
+			}
+		});
+	});
+}
 
 let listVolumes = () => {
 	return new Promise((resolve, reject) => {
@@ -159,4 +176,4 @@ let cleanup = () => {
 	});
 };
 
-export default { containerIP, startContainer, listVolumes, listContainers, runContainer, killUserContainer, cleanup }
+export default { containerIP, startContainer, pullImage, listVolumes, listContainers, runContainer, killUserContainer, cleanup }
