@@ -1,6 +1,12 @@
 # Hackbox
 Hackbox is an open-source, container-based platform that makes it easy to launch vulnerable systems to test your hacking skill!
 
+Users can sign up on Hackbox and choose one of the host-created rooms to try and hack into. They can launch boxes, which spawn Docker containers on the host, which they can then connect to via OpenVPN.
+
+From there, they can send attacks and hack into the box. Their goal is to exfiltrate the flags from the box, which can mean finding hidden services, exploiting systems, or privilege escalating into root.
+
+The server owner just needs to create vulnerable Docker images, and add them to the database for users to be able to hack into them. See `hackbox_server/db_setup.js` for an example!
+
 ## Screenshots
 ![](https://i.gyazo.com/c89054332723fcc9e3e2af937940b7a2.png)
 ![](https://i.gyazo.com/d1c7e63b64714cc0bc058e6204f5e435.png)
