@@ -35,6 +35,9 @@ docker pull strellic/hackbox_kali # not required if you remove kali room
 
 From there, follow the setup instructions in each of the folders.
 
+## GOTTY Support
+[GOTTY](https://github.com/yudai/gotty) can allow CLI applications to be accessible over the web. If `GOTTY_ENABLED` is set to true in `hackbox_server`, people will be able to access the example Kali room over a webshell. See GOTTY's LICENSE (MIT) [here](https://github.com/yudai/gotty/blob/master/LICENSE).
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
