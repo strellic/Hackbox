@@ -285,6 +285,14 @@ class Room extends React.Component {
 				          </Col>
 			              <hr />
 			              <ReactMarkdown>{this.state.room.markdown}</ReactMarkdown>
+
+                    {this.state.room.html && (
+                      <>
+                        <hr />
+                        <div dangerouslySetInnerHTML={{__html: this.state.room.html.replace(/{USERNAME}/g, this.props.username)}} />
+                      </>
+                    )}
+
                     {this.state.room.flags.length > 0 && (
                       <>
                         <hr />

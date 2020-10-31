@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "next start -p 4000",
+    "start": "next start -p 3700",
     "build": "next build",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && rm -rf out/ && npm install && npm run dev",
     "compile-sass": "node-sass assets/scss/nextjs-argon-dashboard.scss assets/css/nextjs-argon-dashboard.css",
     "minify-sass": "node-sass assets/scss/nextjs-argon-dashboard.scss assets/css/nextjs-argon-dashboard.min.css --output-style compressed",
     "map-sass": "node-sass assets/scss/nextjs-argon-dashboard.scss assets/css/nextjs-argon-dashboard.css --source-map true",
     "all-sass": "npm run compile-sass && npm run minify-sass && npm run map-sass",
-    "dev": "next dev -p 4000"
+    "dev": "next dev -p 3700"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.0",

@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import jwt from "jsonwebtoken";
 import passport from "passport";
+import { spawn } from 'child_process';
 
 dotenv.config();
 
@@ -63,6 +64,15 @@ initVPN().then(() => {
 	});
 
 	dbSetup();
+
+	let gotty = null;
+	if(process.env.ENABLE_GOTTY === "true") {
+		gotty = spawn('./gotty/gotty', ['--title-format', 'Webshell', '-w', '-p', process.env.GOTTY_PORT, '--permit-arguments', './gotty/serve.sh']);
+		gotty.on('close', (code) => {
+			console.log(`[GOTTY] Child process exited with code ${code}.`);
+		});
+		console.log(`[GOTTY] GOTTY server listening at http://localhost:${process.env.GOTTY_PORT}`);
+	}
 
 	setInterval(utils.cleanup, 60 * 1000);
 	utils.cleanup();

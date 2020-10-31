@@ -141,7 +141,8 @@ router.post("/info", requiresLogin, async (req, res) => {
 			shortDescription: room.shortDescription,
 			markdown: room.markdown,
 			flags: room.flags.map(x => x.name),
-			completed: user.completed.includes(room.name)
+			completed: user.completed.includes(room.name),
+			html: room.html
 		}
 	})
 });
@@ -308,7 +309,11 @@ router.post("/launch", requiresLogin, async (req, res) => {
 				NetworkMode: `container:hackbox_vpn_${username}_${name}`,
 				Memory: 512000000,
 				CpuPeriod: 100000,
-				CpuQuota: 100000
+				CpuQuota: 100000,
+				PidsLimit: 512,
+				Ulimits: [
+					{Name: "nofile", Soft: 1024, Hard: 2048}
+				]
 			}
 		};
 
