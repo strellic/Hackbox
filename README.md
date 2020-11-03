@@ -12,6 +12,7 @@ The server owner just needs to create vulnerable Docker images, and add them to 
 ![](https://i.gyazo.com/d1c7e63b64714cc0bc058e6204f5e435.png)
 ![](https://i.gyazo.com/28fa83a752ef803053e5820899b3eda5.png)
 ![](https://i.gyazo.com/40e01a215da1ca370582f27a076ff33d.png)
+![](https://i.gyazo.com/4e43f2fcffb308634ad8c36ee7f92398.png)
 
 ## Setup
 Before starting the setup for `hackbox_client` and `hackbox_server`, the OpenVPN Docker container system needs to be created first.
