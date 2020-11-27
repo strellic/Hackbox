@@ -15,7 +15,7 @@ The server owner just needs to create vulnerable Docker images, and add them to 
 ![](https://i.gyazo.com/4e43f2fcffb308634ad8c36ee7f92398.png)
 
 ## Setup
-Before starting the setup for `hackbox_client` and `hackbox_server`, the OpenVPN Docker container system needs to be created first.
+Before starting the setup for `hackbox_client` and `hackbox_server`, the OpenVPN Docker container system needs to be created first. Make sure the user you run the commands as is `root`, or is in the `docker` group!
 
 Run the following setup commands to initialize the OpenVPN docker container:
 ```bash
@@ -34,6 +34,7 @@ docker pull strellic/hackbox_example_room # not required if you remove example r
 docker pull strellic/hackbox_kali # not required if you remove kali room
 ```
 
+After this, you should have created a Docker volume and have the OpenVPN Docker container up and running.
 From there, follow the setup instructions in each of the folders.
 
 ## GOTTY Support

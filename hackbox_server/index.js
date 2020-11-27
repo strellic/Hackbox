@@ -65,6 +65,8 @@ initVPN().then(() => {
 
 	dbSetup();
 
+	console.log(process.env.ENABLE_GOTTY);
+
 	let gotty = null;
 	if(process.env.ENABLE_GOTTY === "true") {
 		gotty = spawn('./gotty/gotty', ['--title-format', 'Webshell', '-w', '-p', process.env.GOTTY_PORT, '--permit-arguments', './gotty/serve.sh']);

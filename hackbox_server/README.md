@@ -18,8 +18,10 @@ ORIGIN=https://hackbox.example.com
 OPENVPN_CA_PASS=ca_pass
 OPENVPN_VOLUME=ovpn-data-hackbox
 OPENVPN_SERVER=vpn.example.com
-ENABLE_GOTTY=true # GOTTY port to provide a webshell, see ./gotty/
+ENABLE_GOTTY=true
 GOTTY_PORT=3702
-GOTTY_URL=http://localhost:3702 # Check usage in db_setup.js
+GOTTY_URL=http://localhost:3702
 ```
+(Check `db_setup.js` to see how `GOTTY_URL` is used.)
+
 3. Run `npm start` to start the API server.
